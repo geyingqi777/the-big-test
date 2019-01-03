@@ -18,5 +18,10 @@ public class IntegerTest {
 		a = a + Integer.MAX_VALUE;
 		System.out.println(Integer.MAX_VALUE);
 		System.out.println(a);
+
+		// ++ 在前后的区别:  在后的,先执行其他的再加, 在前的,先加再执行其他的
+		int i = 1;
+		System.out.println(i++);
+		System.out.println(++i);
 	}
 }
