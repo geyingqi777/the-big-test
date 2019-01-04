@@ -1,4 +1,4 @@
-package gyq.java.base.test;
+package gyq.java.lang.test;
 
 /**
  * 测试switch的语法特性

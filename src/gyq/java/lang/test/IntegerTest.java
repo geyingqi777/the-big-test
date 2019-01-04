@@ -1,4 +1,4 @@
-package gyq.java.base.test;
+package gyq.java.lang.test;
 
 /**
  * Created by Asa on 2019/1/2.
