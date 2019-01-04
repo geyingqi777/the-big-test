@@ -8,6 +8,9 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 测试future的执行模式和用法
+ */
 public class FutureTaskCookFood {
 
 	public static void main(String[] args) {
