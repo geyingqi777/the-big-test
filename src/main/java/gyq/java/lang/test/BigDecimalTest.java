@@ -7,7 +7,8 @@ import java.math.BigDecimal;
  */
 public class BigDecimalTest {
 	public static void main(String[] args) {
-		BigDecimal bigDecimal1 = BigDecimal.valueOf(0.1d);
+		BigDecimal bigDecimal1 = BigDecimal.valueOf(0.1f);
+		// BigDecimal bigDecimal1 = BigDecimal.valueOf(0.1d);
 		BigDecimal bigDecimal2 = BigDecimal.valueOf(7);
 		BigDecimal bigDecimal3 = BigDecimal.valueOf(130);
 		BigDecimal multiply = bigDecimal1.multiply(bigDecimal2).multiply(bigDecimal3);
