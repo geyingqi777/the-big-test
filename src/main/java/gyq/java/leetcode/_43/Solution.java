@@ -98,10 +98,10 @@ public class Solution {
 		// 所以这里需要保留到千位
 		int position1000 = 0;// 千位
 		for (int i = 0; i < rowCount + lineCount; i++) {
-			StringBuilder stringBuilder1 = new StringBuilder("5023045302335819");
-			if (stringBuilder1.reverse().toString().equals(stringBuilder.toString())) {
-				System.out.println("错误调试时从后往前找到没错的那一位,debug用");
-			}
+			// StringBuilder stringBuilder1 = new StringBuilder("5023045302335819");
+			// if (stringBuilder1.reverse().toString().equals(stringBuilder.toString())) {
+			// System.out.println("错误调试时从后往前找到没错的那一位,debug用");
+			// }
 			int sum = 0;
 			// 内层循环是行
 			for (int j = 0; j < lineCount; j++) {
