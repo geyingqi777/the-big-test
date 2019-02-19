@@ -2,8 +2,6 @@ package gyq.java.leetcode._43;
 
 import java.math.BigDecimal;
 
-import com.alibaba.fastjson.JSON;
-
 /**
  * 字符串相乘 Created by ge_yi on 2019/2/18.
  */
@@ -30,8 +28,8 @@ public class Solution {
 	 * @return
 	 */
 	public String multiply(String num1, String num2) {
-		// 本方法的解决思路是完全模拟小学乘法竖式的方式, 完全还原且没有利用乘积位置的规律
-		
+		// 本方法的解决思路是完全模拟小学乘法竖式的方式, 完全还原且没有利用乘积位置的规律,比较土,抠了一下午才抠出来
+
 		// 而且为了便于理解,总是把更短的那个数值放在竖式下面, 长的放在竖式上面
 		if ("0".equals(num1) || "0".equals(num2)) {
 			return "0";
@@ -87,8 +85,8 @@ public class Solution {
 			array[lengthShorter - 1 - i][0] = position10;
 		}
 		// for (int[] ints : array) {
-		// 	// 打印一行看下
-		// 	System.out.println(JSON.toJSONString(ints));
+		// // 打印一行看下
+		// System.out.println(JSON.toJSONString(ints));
 		// }
 
 		// 最后把二维数组按列相加, 此处还是不能用int直接相加,可能会溢出
