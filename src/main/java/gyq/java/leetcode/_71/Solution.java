@@ -61,9 +61,14 @@ public class Solution {
 	 * @return
 	 */
 	public String simplifyPath(String path) {
-		// 思路1: 正则替换
-		// 特殊的路径有 /.当前路径 /..上一级目录 在最后/等于/. 多个/////
+		// 思路: 正则替换
+		// 特殊的路径有
+		// 1. 多个/////,替换成一个/
+		// 2. 在最后/,替换成""
+		// 3. /.当前路径,替换成""
+		// 4. /..上一级目录, 连到上一个/的路径替换成""
 		Pattern pattern = Pattern.compile("/+");
 		path.replaceAll("\\/+", "\\/");
+		return null;
 	}
 }
