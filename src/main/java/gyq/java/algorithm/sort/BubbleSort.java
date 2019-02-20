@@ -1,4 +1,4 @@
-package gyq.java.algorithm.leetcode.sort;
+package gyq.java.algorithm.sort;
 
 import java.util.LinkedList;
 import java.util.List;
