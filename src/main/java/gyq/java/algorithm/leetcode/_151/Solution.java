@@ -1,4 +1,4 @@
-package gyq.java.leetcode._151;
+package gyq.java.algorithm.leetcode._151;
 
 /**
  * 翻转字符串里的单词

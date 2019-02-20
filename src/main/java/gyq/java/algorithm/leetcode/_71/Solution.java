@@ -1,4 +1,4 @@
-package gyq.java.leetcode._71;
+package gyq.java.algorithm.leetcode._71;
 
 import java.util.ArrayList;
 import java.util.List;
