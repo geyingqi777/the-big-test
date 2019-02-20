@@ -1,6 +1,7 @@
 package gyq.java.leetcode._71;
 
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 简化路径 Created by ge_yi on 2019/2/19.
@@ -61,14 +62,106 @@ public class Solution {
 	 * @return
 	 */
 	public String simplifyPath(String path) {
-		// 思路: 正则替换
-		// 特殊的路径有
-		// 1. 多个/////,替换成一个/
-		// 2. 在最后/,替换成""
-		// 3. /.当前路径,替换成""
-		// 4. /..上一级目录, 连到上一个/的路径替换成""
-		Pattern pattern = Pattern.compile("/+");
-		path.replaceAll("\\/+", "\\/");
-		return null;
+		// 思路: 用正则替换, 这里需要用到正则语法里面的零宽断言
+		// /. 当前路径,替换成"/", 这里用了负向零宽断言
+		// (?!exp):零宽度负预测先行断言，断言此位置的后面不能匹配表达式exp
+		path = path.replaceAll("\\/\\.(?!([\\.]|[^\\/]))", "/");
+		// /..在路径行首,直接换成/
+		path = path.replaceAll("^\\/\\.\\.(?!([\\.]|[^\\/]))", "/");
+		// 多个/////,替换成一个/
+		path = path.replaceAll("\\/+", "\\/");
+		int lengthBefore = path.length();
+		while (true) {
+			// 循环逐个替换
+			// /..上一级目录, 连到上一级的路径替换成"/"
+			path = path.replaceFirst("\\/[^\\/]+\\/\\.\\.(?!([\\.]|[^\\/]))", "/");
+			// 多个/////,替换成一个/
+			path = path.replaceAll("\\/+", "\\/");
+			int length = path.length();
+			if (lengthBefore == length) {
+				// 没有可换的了
+				break;
+			} else {
+				lengthBefore = length;
+			}
+		}
+		// 执行完上面循环之后,还是可能出现 /..在路径行首,直接换成/
+		// 例如 /a/../../b/../c/
+		path = path.replaceAll("^\\/\\.\\.(?!([\\.]|[^\\/]))", "/");
+		// 多个/////,替换成一个/
+		path = path.replaceAll("\\/+", "\\/");
+		int length = path.length();
+		// 去掉最后的/
+		if (length > 1 && path.charAt(length - 1) == '/') {
+			path = path.substring(0, length - 1);
+		}
+		return path;
+	}
+
+	/**
+	 * 利用栈的方式
+	 * 
+	 * @param path
+	 * @return
+	 */
+	public String simplifyPath2(String path) {
+		// 思路: 利用栈的思想
+		String[] strings = path.split("\\/");
+		List<String> list = new ArrayList<>(strings.length);
+		for (String string : strings) {
+			if (string.equals(".") || string.equals("")) {
+				// 不变
+			} else if (string.equals("..")) {
+				// 删掉最后一个
+				int size = list.size();
+				if (size > 0) {
+					list.remove(size - 1);
+				}
+			} else {
+				// 加到最后一个
+				list.add(string);
+			}
+		}
+
+		StringBuilder stringBuilder = new StringBuilder();
+		// String result = "";
+		for (int i = 0; i < list.size(); i++) {
+			String s = list.get(i);
+			if (!s.equals("")) {
+				stringBuilder.append(s).append("/");
+				// result = result + s + "/";
+			}
+		}
+		int length = stringBuilder.length();
+		// int length = result.length();
+		if (length == 0) {
+			// 这种情况, 要么是/ 要么是.
+			if (path.charAt(0) == '/') {
+				return "/";
+			} else {
+				return ".";
+			}
+			// return path.substring(0, 1);
+		} else {
+			// 删除最后的/, 首位插上/
+			String s = stringBuilder.deleteCharAt(length - 1).insert(0, "/").toString();
+			// String s = "/" + result.substring(0, length - 1);
+			return s;
+		}
+	}
+
+	public static void main(String[] args) {
+		Solution solution = new Solution();
+		String s = "./a////.//b/c/../d////";
+		s = "/../";
+		s = "/a//b////c/d//././/..";
+		s = "/abc/...";
+		s = "/..hidden";
+		s = "/a/../../b/../c//.//";
+		s = "/home/../../..";
+		s = "/a/./b/../../c/";
+		s = "/.././em/jl///../.././../E/";
+		String simplifyPath = solution.simplifyPath(s);
+		System.out.println(simplifyPath);
 	}
 }
