@@ -1,4 +1,4 @@
-package gyq.java.leetcode._3;
+package gyq.java.algorithm.leetcode._3;
 
 import java.util.HashMap;
 import java.util.HashSet;

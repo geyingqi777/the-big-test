@@ -1,4 +1,4 @@
-package gyq.java.leetcode._14;
+package gyq.java.algorithm.leetcode._14;
 
 /**
  * 最长公共前缀 Created by ge_yi on 2019/2/18.
