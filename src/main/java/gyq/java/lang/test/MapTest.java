@@ -11,15 +11,6 @@ public class MapTest {
 	private static Person person = new Person();
 
 	public static void main(String[] args) {
-		// final Map<String, FarmBuildingConfig> configMap = new HashMap<>();
-		// FarmBuildingConfig farmBuildingConfig = new FarmBuildingConfig();
-		// configMap.put("1", farmBuildingConfig);
-		// List<FarmBuildingConfig> list=new ArrayList<>();
-		// list.add(farmBuildingConfig);
-		// FarmBuildingConfig farmBuildingConfig1 = configMap.get("1");
-		// farmBuildingConfig.setX(1);
-		// System.out.println(configMap.get("1").getX());
-		// System.out.println(list.get(0).getX());
 		System.out.println(System.currentTimeMillis());
 		Map<String, Object> resultMap = new HashMap<>(2, 1.1f);
 		resultMap.put("1", "1");

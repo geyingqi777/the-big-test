@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.dbay.component.welove.model.game.farm.FarmContext;
 
 public class ListTest {
 	public static void main(String[] args) {
@@ -28,12 +27,6 @@ public class ListTest {
 		list2.addAll(list1);
 		int indexOf = list1.indexOf(1);
 		System.out.println(indexOf);
-
-		FarmContext farmContext = new FarmContext();
-		List<Integer> list = farmContext.getAchievementIds();
-		System.out.println(list == null);
-		farmContext.setAchievementIds(new LinkedList<>());
-		System.out.println(list == null);
 
 	}
 }

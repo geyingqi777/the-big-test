@@ -1,9 +1,7 @@
-package gyq.java.Email;
+package gyq.java.util;
 
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
-
-import gyq.java.util.IpAddressUtils;
 
 /**
  * Created by ge_yi on 2019/2/21.
@@ -13,15 +11,14 @@ public class EmailUtil {
 		try {
 			Email email = new SimpleEmail();
 			email.setCharset("UTF-8");
-			email.setHostName("smtp.126.com");
+			email.setHostName("smtp.163.com");
 			email.setSmtpPort(25);
-			email.setAuthentication("discoverybay@126.com", "discoverybay-inc");
+			email.setAuthentication("123@163.com", "123-inc");
 			email.setTLS(false);
-			email.setFrom("discoverybay@126.com", "脚本监控");
-			email.setSubject(IpAddressUtils.getLocalAddress() + " log服务器脚本执行错误");
-
-			// 设置收件人，后端 2018年5月8日12:12:15
-			email.addTo("asage@welove-inc.com");
+			email.setFrom("123@126.com", "监控");
+			email.setSubject(IpAddressUtils.getLocalAddress() + " 脚本执行错误");
+			// 设置收件人
+			email.addTo("ge_ying_qi@163.com");
 
 			StringBuilder sb = new StringBuilder();
 			sb.append("脚本执行错误\n");
@@ -50,7 +47,7 @@ public class EmailUtil {
 			email.setMsg(sb.toString());
 			email.send();
 			// 增加mattermost通知
-			// MatterMostNotifyUtils.notifyMattermostDetail(email.getSubject(), null, sb.toString(), MatterMostChannelEnum.CHANNEL_SCRIPT_NOTIFY);
+			// f.notifyMattermostDetail(email.getSubject(), null, sb.toString(), MatterMostChannelEnum.CHANNEL_SCRIPT_NOTIFY);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

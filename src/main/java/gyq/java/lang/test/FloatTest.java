@@ -1,6 +1,7 @@
 package gyq.java.lang.test;
 
-import com.dbay.core.utils.RandomUtils;
+
+import org.apache.commons.lang.math.RandomUtils;
 
 /**
  * @author Asa
