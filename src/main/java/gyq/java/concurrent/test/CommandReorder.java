@@ -6,8 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 测试重排序在多线程环境下带来的影响
- * Created by Asa on 2019-01-03.
+ * 测试重排序在多线程环境下带来的影响 Created by Asa on 2019-01-03.
  */
 public class CommandReorder {
 	private static List<String> a = null;
@@ -21,7 +20,7 @@ public class CommandReorder {
 	public static void main(String[] args) {
 		ExecutorService executorService = null;
 		for (int i = 0; i < 10000; i++) {
-			// 重置一下共享变量 
+			// 重置一下共享变量
 			a = null;
 			b = null;
 			flag = false;
@@ -49,15 +48,15 @@ public class CommandReorder {
 		@Override
 		public void run() {
 			// 此处可能重排序,先执行flag=true
-			a = new ArrayList<>(100000);  //1
-			b = new ArrayList<>(100000);  //1
-			// FIXME: 2019-01-04 
-			//  只要任何一个flag赋值排到前面先执行了, 就会得到想要的错误结果了,但是现在还是重现不了
-			flag = true;        //2
-			flag1 = true;        //2
-			flag2 = true;        //2
-			flag3 = true;        //2
-			flag4 = true;        //2
+			a = new ArrayList<>(100000); // 1
+			b = new ArrayList<>(100000); // 1
+			// FIXME: 2019-01-04
+			// 只要任何一个flag赋值排到前面先执行了, 就会得到想要的错误结果了,但是现在还是重现不了
+			flag = true; // 2
+			flag1 = true; // 2
+			flag2 = true; // 2
+			flag3 = true; // 2
+			flag4 = true; // 2
 		}
 	}
 

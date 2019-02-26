@@ -25,7 +25,7 @@ public class BubbleSort {
 			}
 		}
 	}
-	// TODO: 2019-02-19 冒泡排序效率优化版 
+	// TODO: 2019-02-19 冒泡排序效率优化版
 
 	public static void main(String[] args) {
 		List<Integer> arrayList = new LinkedList<>();

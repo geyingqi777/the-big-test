@@ -1,8 +1,7 @@
 package gyq.java.concurrent.test;
 
 /**
- * 测试线程的yield方法
- * Created by Asa on 2019-01-04.
+ * 测试线程的yield方法 Created by Asa on 2019-01-04.
  */
 public class TreadYieldTest extends Thread {
 
@@ -28,4 +27,3 @@ public class TreadYieldTest extends Thread {
 		yt2.start();
 	}
 }
-

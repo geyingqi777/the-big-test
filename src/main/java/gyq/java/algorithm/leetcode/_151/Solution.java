@@ -1,8 +1,7 @@
 package gyq.java.algorithm.leetcode._151;
 
 /**
- * 翻转字符串里的单词
- * Created by ge_yi on 2019/2/19.
+ * 翻转字符串里的单词 Created by ge_yi on 2019/2/19.
  */
 public class Solution {
 	/**

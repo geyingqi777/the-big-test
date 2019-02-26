@@ -1,8 +1,6 @@
-package gyq.java.algorithm.bit;
+package gyq.java.lang.test;
 
 /**
- * todo 整理一下位运算的算法
- * 
  * @author Asa
  * @version 创建时间：2016年8月3日 上午10:14:37
  */

@@ -1,12 +1,13 @@
 package gyq.java.concurrent.test;
 
-import com.alibaba.fastjson.JSON;
-import org.apache.commons.lang.math.RandomUtils;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
+
+import org.apache.commons.lang.math.RandomUtils;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * 测试future的执行模式和用法
@@ -22,7 +23,7 @@ public class FutureTaskCookFood {
 			public Wok call() throws Exception {
 				System.out.println("第一步：下单");
 				System.out.println("第一步：等待送货");
-				Thread.sleep(5000);  // 模拟送货时间
+				Thread.sleep(5000); // 模拟送货时间
 				System.out.println("第一步：快递送到");
 				Wok wok = new Wok();
 				wok.setName("章丘铁锅");
@@ -34,14 +35,14 @@ public class FutureTaskCookFood {
 		new Thread(task).start();
 		// 第二步 去超市购买食材
 		try {
-			Thread.sleep(2000);  // 模拟购买食材时间
+			Thread.sleep(2000); // 模拟购买食材时间
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		Food food = new Food();
 		System.out.println("第二步：食材到位");
 		// 第三步 用锅烹饪食材
-		if (!task.isDone()) {  // 联系快递员，询问是否到货
+		if (!task.isDone()) { // 联系快递员，询问是否到货
 			int i = RandomUtils.nextInt(2);
 			if (i == 1) {
 				System.out.println("第三步：锅还没到，再等等");
@@ -69,7 +70,7 @@ public class FutureTaskCookFood {
 		System.out.println("总共用时" + (System.currentTimeMillis() - startTime) + "ms");
 	}
 
-	//  用厨具烹饪食材
+	// 用厨具烹饪食材
 	static void cook(Wok wok, Food food) {
 		System.out.println("烹饪...");
 	}
