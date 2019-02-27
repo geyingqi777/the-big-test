@@ -59,12 +59,12 @@ class BubbleSort implements SortAlgorithm {
 		bubbleSort.sort(integers);
 
 		// Output => 231, 78, 54, 23, 12, 9, 6, 4, 1
-		SortUtils.print(integers);
+		SortUtils.printObjArray(integers);
 
 		// String Input
 		String[] strings = { "c", "a", "e", "b", "d" };
 		// Output => e, d, c, b, a
-		SortUtils.print(bubbleSort.sort(strings));
+		SortUtils.printObjArray(bubbleSort.sort(strings));
 
 	}
 }

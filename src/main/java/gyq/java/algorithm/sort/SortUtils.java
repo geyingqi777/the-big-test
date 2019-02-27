@@ -1,7 +1,8 @@
 package gyq.java.algorithm.sort;
 
-import java.util.Arrays;
 import java.util.List;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * 排序算法需要用到的工具类
@@ -44,10 +45,10 @@ final class SortUtils {
 	 * @param toPrint
 	 *            - a list which should be printed
 	 */
-	static void print(List<?> toPrint) {
-		toPrint.stream().map(Object::toString).map(str -> str + " ").forEach(System.out::print);
-
-		System.out.println();
+	static void printList(List<?> toPrint) {
+		// toPrint.stream().map(Object::toString).map(str -> str + " ").forEach(System.out::print);
+		// System.out.println();
+		System.out.println(JSON.toJSONString(toPrint));
 	}
 
 	/**
@@ -56,8 +57,17 @@ final class SortUtils {
 	 * @param toPrint
 	 *            - the array which should be printed
 	 */
-	static void print(Object[] toPrint) {
-		System.out.println(Arrays.toString(toPrint));
+	static void printObjArray(Object[] toPrint) {
+		// System.out.println(Arrays.toString(toPrint));
+		System.out.println(JSON.toJSONString(toPrint));
+	}
+
+	/**
+	 * 打印对象
+	 * @param object
+	 */
+	static void printObject(Object object) {
+		System.out.println(JSON.toJSONString(object));
 	}
 
 	/**

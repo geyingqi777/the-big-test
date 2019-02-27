@@ -1,18 +1,11 @@
-package gyq.java.algorithm.leetcode.sort.dynamic;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import com.alibaba.fastjson.JSON;
+package gyq.java.algorithm.dynamic_programming;
 
 /**
- * Created by Asa on 2019-02-21.
+ * 爬楼梯问题 Created by Asa on 2019-02-21.
  */
-public class UpStairs {
+public class ClimbStairs {
 	public static void main(String[] args) {
-		// System.out.println(calculateCount(6, 2));
-		// System.out.println(fun(null, 6));
-		fun(null, 6);
+		System.out.println(calculateCount(6, 2));
 	}
 
 	/**
@@ -45,23 +38,21 @@ public class UpStairs {
 		return jump;
 	}
 
-	private static long fun(List<Integer> list, int n) {
-		if (list == null) {
-			list = new LinkedList<>();
-		}
-		if (n == 1) { // 一级台阶只有1种方法
-			list.add(1);
+	/**
+	 * 当calculateCount方法中,maxJump等于2的时候的特殊情况
+	 * 
+	 * @param n
+	 * @return
+	 */
+	private static long calculateCount2(int n) {
+		if (n == 1) {
+			// 一级台阶只有1种方法
 			return 1;
 		} else if (n == 2) {
-			list.add(2);
+			// 二级台阶2种，其实可以省略的 不过为了初学者能够看清楚 我这里写出来
 			return 2;
-		} // 二级台阶2种，其实可以省略的 不过为了初学者能够看清楚 我这里写出来
-
-		long l = fun(list, n - 1) + fun(list, n - 2);
-		if (n == 6) {
-			System.out.println(JSON.toJSONString(list));
 		}
-		return l;
+		return calculateCount2(n - 1) + calculateCount2(n - 2);
 	}
 
 }
