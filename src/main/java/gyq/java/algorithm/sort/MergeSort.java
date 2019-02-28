@@ -54,7 +54,7 @@ public class MergeSort implements SortAlgorithm {
 	private <T extends Comparable<T>> T[] merge(T[] array, int left, int mid, int right, T[] temp) {
 		int i = left; // 左半部分的索引
 		int j = mid + 1; // 右半部分的索引
-		int k = 0;// 临时数组的索引
+		int k = left;// 临时数组的索引,因为临时数组是一直复用的, 所以k从left位置开始,这样最后把temp赋值回array的时候位置能对应上
 		while (i <= mid && j <= right) {
 			// 升序
 			// 把原数组的值,填进新数组
