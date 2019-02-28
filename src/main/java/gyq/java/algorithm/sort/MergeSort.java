@@ -20,12 +20,12 @@ package gyq.java.algorithm.sort;
 public class MergeSort implements SortAlgorithm {
 
 	@Override
-	public <T extends Comparable<T>> T[] sort(T[] unsorted) {
-		int length = unsorted.length;
+	public <T extends Comparable<T>> T[] sort(T[] array) {
+		int length = array.length;
 		// 这里声明一个和原来数组一样长度的数组,就不需要其他空间了
 		// 泛型数组的创建方式貌似只能强制转换一下
 		T[] temp = (T[]) new Comparable[length];
-		return mergeSort(unsorted, 0, length - 1, temp);
+		return mergeSort(array, 0, length - 1, temp);
 	}
 
 	private <T extends Comparable<T>> T[] mergeSort(T[] array, int left, int right, T[] temp) {

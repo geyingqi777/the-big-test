@@ -21,9 +21,9 @@ package gyq.java.algorithm.sort;
  */
 public class QuickSort implements SortAlgorithm {
 	@Override
-	public <T extends Comparable<T>> T[] sort(T[] unsorted) {
-		quickSort(unsorted, 0, unsorted.length - 1);
-		return unsorted;
+	public <T extends Comparable<T>> T[] sort(T[] array) {
+		quickSort(array, 0, array.length - 1);
+		return array;
 	}
 
 	/**
@@ -73,9 +73,22 @@ public class QuickSort implements SortAlgorithm {
 	}
 
 	public static void main(String[] args) {
-		Integer[] arr = { 10, 7, 2, 4, 7, 62, 3, 4, 2, 1, 11, 8, 9, 19 };
-		SortUtils.printObjArray(arr);
-		new QuickSort().sort(arr);
-		SortUtils.printObjArray(arr);
+		// Integer Input
+		Integer[] integers = { 4, 23, 6, 78, 1, 54, 231, 9, 12 };
+
+		InsertionSort sort = new InsertionSort();
+
+		sort.sort(integers);
+
+		// Output => 1 4 6 9 12 23 54 78 231
+		SortUtils.printObject(integers);
+
+		// String Input
+		String[] strings = { "c", "a", "e", "b", "d" };
+
+		sort.sort(strings);
+
+		// Output => a b c d e
+		SortUtils.printObject(strings);
 	}
 }
