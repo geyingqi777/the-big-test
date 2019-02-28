@@ -5,7 +5,7 @@ package gyq.java.algorithm.sort;
  *
  * 算法思想：基于分治的思想，是冒泡排序的改进型。
  * 
- * 首先在数组中选择一个基准点（该基准点的选取可能影响快速排序的效率，后面讲解选取的方法），
+ * 首先在数组中选择一个基准点（该基准点的选取可能影响快速排序的效率，选取的方法可优化），
  * 
  * 然后分别从数组的两端扫描数组，设两个指示标志（lo指向起始位置，hi指向末尾)，
  * 
@@ -76,7 +76,7 @@ public class QuickSort implements SortAlgorithm {
 		// Integer Input
 		Integer[] integers = { 4, 23, 6, 78, 1, 54, 231, 9, 12 };
 
-		InsertionSort sort = new InsertionSort();
+		QuickSort sort = new QuickSort();
 
 		sort.sort(integers);
 
