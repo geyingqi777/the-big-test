@@ -1,7 +1,7 @@
 package gyq.java.algorithm.sort;
 
 /**
- * 快速排序
+ * 快速排序 时间复杂度为O(nlogn)
  *
  * 算法思想：基于分治的思想，是冒泡排序的改进型。
  * 

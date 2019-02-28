@@ -3,7 +3,7 @@ package gyq.java.algorithm.sort;
 import java.util.List;
 
 /**
- * 冒泡排序
+ * 冒泡排序 时间复杂度O(n^2)
  * 
  * @see SortAlgorithm
  */
