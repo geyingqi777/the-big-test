@@ -19,9 +19,9 @@ public class InsertionSort implements SortAlgorithm {
 	public <T extends Comparable<T>> T[] sort(T[] array) {
 		int length = array.length;
 		for (int i = 1; i < length; i++) {
-			// 外层从左到右
+			// 外层从左到右，遍历i到length之间的数据
 			for (int j = i; j > 0; j--) {
-				// 内层从右到左遍历
+				// 内层遍历索引0到索引i之间的数据，从右到左遍历
 				if (array[j].compareTo(array[j - 1]) < 0) {
 					// 升序,大的放后面,
 					// ps:个人感觉,这种排序方式之所以叫插入排序, 是因为交换位置的时候, 就像是把要排到前面的插队过去...感觉其实和冒泡排序相比没啥本质区别...
