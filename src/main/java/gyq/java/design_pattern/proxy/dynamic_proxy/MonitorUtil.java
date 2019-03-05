@@ -1,4 +1,4 @@
-package gyq.java.design_pattern.dynamic_proxy;
+package gyq.java.design_pattern.proxy.dynamic_proxy;
 
 public class MonitorUtil {
 

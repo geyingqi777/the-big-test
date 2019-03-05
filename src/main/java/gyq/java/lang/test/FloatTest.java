@@ -1,6 +1,5 @@
 package gyq.java.lang.test;
 
-
 import org.apache.commons.lang.math.RandomUtils;
 
 /**

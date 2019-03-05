@@ -1,4 +1,4 @@
-package gyq.java.design_pattern.static_proxy;
+package gyq.java.design_pattern.proxy.static_proxy;
 
 public class StaticProxyTest {
 	public static void main(String[] args) {

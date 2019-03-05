@@ -1,11 +1,9 @@
 package gyq.java.lang.test;
 
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
 
 import org.apache.commons.lang.time.DateUtils;
-
 
 /**
  * @author Asa
@@ -17,7 +15,7 @@ public class DateTest {
 		System.out.println("时间：" + new Date(1526471508026L).toString());
 		System.out.println(1478078416400L + 40000);
 		System.out.println(new Date(1478078416400L + 40000).toString());
-		
+
 		long long20160930 = 1475182800000L;// 这20160930天5点整的时间戳
 		long long2016093012 = 1475208000000L;
 
