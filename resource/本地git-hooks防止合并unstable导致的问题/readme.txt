@@ -1,7 +1,7 @@
-ÓÑÇéÌáÊ¾: µÀÂ·Ç§ÍòÌõ,°²È«µÚÒ»Ìõ,ÎóºÏunstable,Í¬ÊÂÁ½ÐÐÀá
+å‹æƒ…æç¤º: é“è·¯åƒä¸‡æ¡,å®‰å…¨ç¬¬ä¸€æ¡,è¯¯åˆunstable,åŒäº‹ä¸¤è¡Œæ³ª
 
-°ÑÉÏÊöÎÄ¼þ·ÅÖÃÔÚÏîÄ¿µÄ.git/hooks/Â·¾¶ÏÂ,¸øÕâÐ©ÎÄ¼þÔö¼Ó¿ÉÖ´ÐÐÈ¨ÏÞchmond +x *
-¼´¿É·ÀÖ¹ºÏ²¢unstableºÍtc-unstableºóÌá½»»òÍÆËÍ´úÂë,µ¼ÖÂ´úÂë»ìÂÒ,
-ÀýÈçdbay-welove-component/.git/hooks/Â·¾¶ÏÂ.
+æŠŠä¸Šè¿°æ–‡ä»¶æ”¾ç½®åœ¨é¡¹ç›®çš„.git/hooks/è·¯å¾„ä¸‹,ç»™è¿™äº›æ–‡ä»¶å¢žåŠ å¯æ‰§è¡Œæƒé™chmond +x *
+å³å¯é˜²æ­¢åˆå¹¶unstableå’Œtc-unstableåŽæäº¤æˆ–æŽ¨é€ä»£ç ,å¯¼è‡´ä»£ç æ··ä¹±,
+ä¾‹å¦‚component/.git/hooks/è·¯å¾„ä¸‹.
 
-Èç¹ûºÏ²¢ÁËunstbale·ÖÖ§, ±¾µØ»á×Ô¶¯´´½¨MERGE_UNSTABLE_ISSUE*·ÖÖ§,ÔÚcommitºÍpush²Ù×÷µÄÊ±ºò»á¼ì²é¸Ã·ÖÖ§,ÒÔÖ´ÐÐ×èÖ¹.
+å¦‚æžœåˆå¹¶äº†unstbaleåˆ†æ”¯, æœ¬åœ°ä¼šè‡ªåŠ¨åˆ›å»ºMERGE_UNSTABLE_ISSUE*åˆ†æ”¯,åœ¨commitå’Œpushæ“ä½œçš„æ—¶å€™ä¼šæ£€æŸ¥è¯¥åˆ†æ”¯,ä»¥æ‰§è¡Œé˜»æ­¢.
