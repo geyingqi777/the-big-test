@@ -1,0 +1,15 @@
+#!/bin/sh
+#-----检查刚才的merge操作是否合并了unstable如果合并了,创建MERGE_UNSTABLE_ISSUE*分支--------
+#------------------------------------------------------------------------------
+ 
+echo $GIT_REFLOG_ACTION | grep -q -E "merge unstable|merge tc-unstable" >> /dev/null;
+ 
+if [ $? == 0 ]; then
+echo "Error 合并包含 unstable!!!"
+echo "请立即使用 reset 或 revert 解决此错误!!!"
+#复制原始的状态
+git branch MERGE_UNSTABLE_ISSUE_HEAD_bak HEAD^1
+git branch MERGE_UNSTABLE_ISSUE_Master_bak master^1
+else
+echo "check OK 合并检查无误!!!"
+fi

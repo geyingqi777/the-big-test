@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+#----------------------------------------------------------
+# 禁止使用 unstable，进行 rebase
+#----------------------------------------------------------
+
+ 
+echo $1 | grep -q -E "unstable|tc-unstable" >> /dev/null;
+ 
+if [ $? == 0 ]; then
+echo "Error 不能使用unstable进行rebase操作!!!"
+exit 1;
+else
+exit 0;
+fi

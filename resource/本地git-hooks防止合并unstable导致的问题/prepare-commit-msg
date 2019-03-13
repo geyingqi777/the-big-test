@@ -1,0 +1,14 @@
+#!/bin/sh
+#----------------------------------------------------------
+# 檢查是否要合并unstable的分支，禁止 merge操作
+#----------------------------------------------------------
+#注意:这个分支,只在unstabl要合并到的分支,例如master设置了git config branch.master.mergeoptions "--no-ff"之后才可生效
+
+echo $GIT_REFLOG_ACTION | grep -q -E "merge unstable|merge tc-unstable" >> /dev/null;
+ 
+if [ $? == 0 ]; then
+echo "Error 合并包含 unstable!!!"
+#复制原始的状态
+else
+echo "check OK 合并检查无误!!!"
+fi

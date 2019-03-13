@@ -1,0 +1,14 @@
+#!/bin/sh
+#----------------------------------------------------------
+# 檢查是否包含 MERGE_UNSTABLE_ISSUE* 的分支，禁止 commit
+#----------------------------------------------------------
+#
+ 
+git branch | grep "MERGE_UNSTABLE_ISSUE" >> /dev/null;
+ 
+if [ $? == 0 ]; then
+echo "你最近合并了unstable分支,请先解决此问题,才能进行后续动作!!!"
+exit 1 ;
+else
+exit 0 ;
+fi
