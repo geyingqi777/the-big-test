@@ -1,0 +1,11 @@
+geyingqi:
+  configlist:
+    - 1
+    - 2
+    - 3
+    - 4
+  confimap:
+    1:
+      2
+    2:
+      3
