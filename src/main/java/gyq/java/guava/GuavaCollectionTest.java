@@ -1,4 +1,4 @@
-package gyq.java.lang.test.guava;
+package gyq.java.guava;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
@@ -6,8 +6,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 /**
