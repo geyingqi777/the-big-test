@@ -8,6 +8,12 @@
     <name>the-big-test</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>27.1-jre</version>
+        </dependency>
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
