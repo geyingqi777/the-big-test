@@ -23,5 +23,7 @@ public class IntegerTest {
 		int i = 1;
 		System.out.println(i++);
 		System.out.println(++i);
+
+        System.out.println(352438686 % 256);
 	}
 }
