@@ -13,13 +13,18 @@ import java.io.IOException;
  */
 public class Awk {
     public static void main(String[] args) throws IOException {
-        // awk的四个命令部分
+        // TODO awk的四个命令部分
         String beginCommand = "";
         String patternCommand = "";
         String lineCommand = "";
         String endCommand = "";
         // 要读取的文件路径
         String filePath = "test.log";
+        // TODO awk内置变量
+        // 行数
+        int NR = 0;
+        // 每行分隔符
+        String splitFlag = " ";
 
         // TODO 开始执行begin语句
 
@@ -29,12 +34,15 @@ public class Awk {
         String readLine;
         while ((readLine = bufferedReader.readLine()) != null) {
             // TODO 开始执行pattern语句
-
+            boolean regexMatch = false;
+            if (regexMatch) {
+            }
             // TODO 开始执行commands语句
 
         }
         // TODO 开始执行end语句
 
     }
+
 
 }
