@@ -16,6 +16,9 @@ import java.util.Map;
  * @date 2019-07-01 20:06
  */
 public class SimpleAwk {
+    private static final String LINE = "LINE";
+    private static final String SPLIT = "SPLIT";
+
     public static void main(String[] args) throws IOException {
         // 输入内容
         String filePath = "/Users/geyingqi/work/idea_project/the-big-test/src/main/java/gyq/java/algorithm/simpleawk/seq.log";
@@ -28,10 +31,15 @@ public class SimpleAwk {
         Map<Pattern, Action> patternActionMap = Maps.newHashMap();
         Pattern pattern = context -> {
             System.out.println("这是pattern命令块");
-            return true;
+            String[] split = (String[]) context.get(SPLIT);
+            if (split[0].equals("5")) {
+                return true;
+            } else {
+                return false;
+            }
         };
         Action action = context -> {
-            System.out.println("这是action命令块:" + context.get("$0"));
+            System.out.println("这是action命令块:" + context.get(LINE));
             return true;
         };
         patternActionMap.put(pattern, action);
@@ -40,7 +48,9 @@ public class SimpleAwk {
             System.out.println("这是end命令块,上下文参数为" + JSON.toJSONString(context));
             return true;
         };
-        new SimpleAwk().awkRun(filePath, begin, patternActionMap, end);
+        // 分隔符
+        String splitFlag = ",";
+        new SimpleAwk().awkRun(filePath, begin, patternActionMap, end, splitFlag);
     }
 
     /**
@@ -52,12 +62,12 @@ public class SimpleAwk {
      * @param end              end命令块
      * @throws IOException
      */
-    private void awkRun(String filePath, Begin begin, Map<Pattern, Action> patternActionMap, End end) throws IOException {
-        Map<String, String> context = Maps.newHashMap();
+    private void awkRun(String filePath, Begin begin, Map<Pattern, Action> patternActionMap, End end, String splitFlag) throws IOException {
+        Map<String, Object> context = Maps.newHashMap();
         // awk内置变量,例如:行数
         int NR = 0;
         // 每行分隔符
-        String splitFlag = " ";
+        String splitFlagDefault = splitFlag == null ? " " : splitFlag;
 
         // TODO 开始执行begin语句
         begin.run(context);
@@ -69,9 +79,10 @@ public class SimpleAwk {
         while ((readLine = bufferedReader.readLine()) != null) {
             // 内置变量,例如:字段数
             String $0 = readLine;
-            context.put("$0", $0);
+            context.put(LINE, $0);
             // 按分隔符分隔数据
             String[] split = readLine.split(splitFlag);
+            context.put(SPLIT, split);
             // 行数增加
             NR++;
             // 内置变量,字段数
@@ -101,7 +112,7 @@ public class SimpleAwk {
          * @param context 上下文参数
          * @return
          */
-        boolean run(Map<String, String> context);
+        boolean run(Map<String, Object> context);
     }
 
     /**
