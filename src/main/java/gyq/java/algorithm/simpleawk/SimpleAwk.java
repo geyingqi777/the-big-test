@@ -68,10 +68,8 @@ public class SimpleAwk {
         int NR = 0;
         // 每行分隔符
         String splitFlagDefault = splitFlag == null ? " " : splitFlag;
-
         // TODO 开始执行begin语句
         begin.run(context);
-
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -81,7 +79,7 @@ public class SimpleAwk {
             String $0 = readLine;
             context.put(LINE, $0);
             // 按分隔符分隔数据
-            String[] split = readLine.split(splitFlag);
+            String[] split = readLine.split(splitFlagDefault);
             context.put(SPLIT, split);
             // 行数增加
             NR++;
