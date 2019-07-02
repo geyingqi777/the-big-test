@@ -16,18 +16,23 @@ import java.util.Map;
  */
 public class Awk {
     public static void main(String[] args) throws IOException {
-        new Awk().runAwk();
+        String beginCommand = "";
+        Map<String, String> patternActionMap = Maps.newHashMap();
+        String endCommand = "";
+        String filePath = "";
+        new Awk().runAwk(filePath, beginCommand, patternActionMap, endCommand);
     }
 
-    private void runAwk() throws IOException {
-        // TODO awk的四个命令部分
-        String beginCommand = "";
-        String patternCommand = "";
-        String actionCommand = "";
-        String endCommand = "";
-        Map<String, String> patternActionMap = Maps.newHashMap();
-        // 要读取的文件路径
-        String filePath = "test.log";
+    /**
+     * 模拟表示awk处理流程
+     *
+     * @param filePath         输入文件路径
+     * @param beginCommand     begin命令块
+     * @param patternActionMap pattern{action}命令块
+     * @param endCommand       end命令块
+     * @throws IOException
+     */
+    private void runAwk(String filePath, String beginCommand, Map<String, String> patternActionMap, String endCommand) throws IOException {
         // TODO awk内置变量
         // 行数
         int NR = 0;
@@ -63,10 +68,8 @@ public class Awk {
             }
         }
         // TODO 开始执行end语句
-        {
-            System.out.println("总行数:" + NR);
-            System.out.println("total:" + total);
-        }
+        System.out.println("总行数:" + NR);
+        System.out.println("total:" + total);
     }
 
 
