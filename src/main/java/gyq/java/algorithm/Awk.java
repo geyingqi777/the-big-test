@@ -33,15 +33,27 @@ public class Awk {
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String readLine;
         while ((readLine = bufferedReader.readLine()) != null) {
+            NR++;
             // TODO 开始执行pattern语句
             boolean regexMatch = false;
-            if (regexMatch) {
+            // 正则
+            if (!regexMatch) {
+                // 正则匹配不到,则执行下一行
+                continue;
             }
-            // TODO 开始执行commands语句
+            // 判断条件
+            if (false) {
 
+            }
+            // 初始化变量
+            int count = 0;
+            // TODO 开始执行commands语句
+            if (NR == 1) {
+                System.out.println("这是第一行");
+            }
         }
         // TODO 开始执行end语句
-
+        System.out.println("总行数:" + NR);
     }
 
 
