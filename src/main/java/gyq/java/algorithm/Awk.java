@@ -49,10 +49,14 @@ public class Awk {
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String readLine;
         while ((readLine = bufferedReader.readLine()) != null) {
+            // 内置变量
+            String $0 = readLine;
             // 按分隔符分隔数据
             String[] split = readLine.split(splitFlag);
             // 内置变量,如行数的增加
             NR++;
+            // 内置变量,字段数
+            int NF = split.length;
             for (Map.Entry<String, String> entry : patternActionMap.entrySet()) {
                 String pattern = entry.getKey();
                 String action = entry.getValue();
