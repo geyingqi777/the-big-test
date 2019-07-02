@@ -41,7 +41,7 @@ public class Awk {
 
         // TODO 开始执行begin语句
         runBegin(beginCommand);
-        // 设置一个自定义值
+        // 例如: 设置一个自定义值
         int total = 0;
 
         File file = new File(filePath);
@@ -57,18 +57,21 @@ public class Awk {
                 String pattern = entry.getKey();
                 String action = entry.getValue();
                 // TODO 开始执行pattern语句
-                boolean patternResult = false;
+                boolean patternResult = runPattern(pattern);
                 // TODO 开始执行commands语句
                 if (patternResult) {
+                    runAction(action);
+                    // 例如: 打印第一行第一列信息
                     if (NR == 1) {
-                        System.out.println("这是第一行");
+                        System.out.println(split[0]);
                     }
                     total += NR;
                 }
             }
         }
         // TODO 开始执行end语句
-        System.out.println("总行数:" + NR);
+        runEnd(endCommand);
+        // 例如: 打印计数
         System.out.println("total:" + total);
     }
 
@@ -77,8 +80,9 @@ public class Awk {
         System.out.println("执行begin语句块");
     }
 
-    private void runPattern(String command) {
+    private boolean runPattern(String command) {
         System.out.println("执行pattern语句块");
+        return true;
     }
 
     private void runAction(String command) {
