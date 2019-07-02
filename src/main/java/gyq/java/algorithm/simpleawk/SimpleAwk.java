@@ -18,7 +18,7 @@ import java.util.Map;
 public class SimpleAwk {
     public static void main(String[] args) throws IOException {
         // 输入内容
-        String filePath = "";
+        String filePath = "/Users/geyingqi/work/idea_project/the-big-test/src/main/java/gyq/java/algorithm/simpleawk/seq.log";
         // begin部分参数
         Begin begin = context -> {
             System.out.println("这是begin命令块,上下文参数为" + JSON.toJSONString(context));
@@ -31,9 +31,10 @@ public class SimpleAwk {
             return true;
         };
         Action action = context -> {
-            System.out.println("这是action命令块");
+            System.out.println("这是action命令块:" + context.get("$0"));
             return true;
         };
+        patternActionMap.put(pattern, action);
         // end部分参数
         End end = context -> {
             System.out.println("这是end命令块,上下文参数为" + JSON.toJSONString(context));
@@ -68,6 +69,7 @@ public class SimpleAwk {
         while ((readLine = bufferedReader.readLine()) != null) {
             // 内置变量,例如:字段数
             String $0 = readLine;
+            context.put("$0", $0);
             // 按分隔符分隔数据
             String[] split = readLine.split(splitFlag);
             // 行数增加
