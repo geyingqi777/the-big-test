@@ -1,4 +1,4 @@
-package gyq.java.algorithm.leetcode._567;
+package gyq.java.algorithm.leetcode.question567;
 
 import java.util.Arrays;
 

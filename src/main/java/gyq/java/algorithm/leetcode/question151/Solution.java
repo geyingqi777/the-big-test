@@ -1,4 +1,4 @@
-package gyq.java.algorithm.leetcode._151;
+package gyq.java.algorithm.leetcode.question151;
 
 /**
  * 翻转字符串里的单词 Created by ge_yi on 2019/2/19.

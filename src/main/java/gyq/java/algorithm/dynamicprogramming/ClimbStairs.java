@@ -1,4 +1,4 @@
-package gyq.java.algorithm.dynamic_programming;
+package gyq.java.algorithm.dynamicprogramming;
 
 /**
  * 爬楼梯问题 Created by Asa on 2019-02-21.
