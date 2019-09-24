@@ -1,0 +1,10 @@
+server:
+  #指定web服务启动的端口
+  port: 8081
+#  servlet:
+#    # 项目访问上下文路径
+#    context-path: /gyq
+endpoints:
+  shutdown:
+    #    开启可以通过actuator的/shutdown端点关闭应用的开关, 线上危险操作
+    enabled: true
