@@ -33,6 +33,7 @@ public class CacheLoaderTest {
         };
         LoadingCache<String, String> cache = CacheBuilder.newBuilder()
                 //设置缓存上线
+                // TODO: 2019-09-27 可以设置小一点试一下到达最大时,再put的处理策略 
                 .maximumSize(10000)
                 //设置时间对象没有被读/写访问则对象从内存中删除
                 .expireAfterAccess(10, TimeUnit.MINUTES)
