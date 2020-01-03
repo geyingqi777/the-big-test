@@ -59,5 +59,8 @@ public class JoinerTest {
         Map<String, String> splitMap = mapSplitter.split(stringMap);
         System.out.println(JSON.toJSONString(splitMap));
 
+        String orderNos = "1 ";
+        List<String> splitToList = splitter.splitToList(orderNos);
+        System.out.println(JSON.toJSONString(splitToList));
     }
 }
