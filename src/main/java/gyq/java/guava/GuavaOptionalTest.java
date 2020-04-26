@@ -1,5 +1,6 @@
 package gyq.java.guava;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.base.Optional;
 
 import java.util.Set;
@@ -34,6 +35,14 @@ public class GuavaOptionalTest {
         // null时,返回null
         Object orNull = absent.orNull();
         System.out.println(orNull == null);
+
+        java.util.Optional<Object> optional = getValue();
+        System.out.println(optional.isPresent());
+        System.out.println(JSON.toJSONString(optional));
+    }
+
+    private static java.util.Optional<Object> getValue() {
+        return null;
     }
 
     public static Integer sum(Optional<Integer> a, Optional<Integer> b) {
