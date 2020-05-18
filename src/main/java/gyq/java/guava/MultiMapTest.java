@@ -9,13 +9,15 @@ import com.google.common.collect.LinkedHashMultiset;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.TreeMultimap;
 
+import java.util.List;
+
 /**
  * @author geyingqi
  * @date 2019-09-23 15:23
  */
 public class MultiMapTest {
     public static void main(String[] args) {
-        ArrayListMultimap<Object, Object> arrayListMultimap = ArrayListMultimap.create();
+        ArrayListMultimap<Integer, Integer> arrayListMultimap = ArrayListMultimap.create();
         arrayListMultimap.put(1, 1);
         arrayListMultimap.put(1, 2);
         arrayListMultimap.put(1, 2);
