@@ -1,4 +1,4 @@
-package gyq.java.algorithm.leetcode.question14;
+package gyq.java.algorithm.leetcode.p14_longest_common_prefix;
 
 /**
  * 最长公共前缀 Created by ge_yi on 2019/2/18.

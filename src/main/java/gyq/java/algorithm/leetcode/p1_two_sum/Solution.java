@@ -1,4 +1,4 @@
-package gyq.java.algorithm.leetcode.question1;
+package gyq.java.algorithm.leetcode.p1_two_sum;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -87,6 +87,55 @@ class Solution {
 		return result;
 	}
 
+    public int[] twoSum3(int[] nums, int target) {
+        // 由于范围有限
+        // 2 <= nums.length <= 103 
+        // -109 <= nums[i] <= 109 
+        // -109 <= target <= 109 
+        // 可以先计数排序,然后从数组两头往中间找
+        int min = 109;
+        int max = -109;
+        for (int num : nums) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+        int[] countSort = new int[max - min + 1];
+        for (int num : nums) {
+            countSort[num - min]++;
+        }
+        int index = 0;
+        for (int i = 0; i < countSort.length; i++) {
+            for (int j = 0; j < i; j++) {
+                nums[index] = i + min;
+                index++;
+            }
+        }
+        int low = 0;
+        int high = nums.length -1;
+        while (low < high) {
+            int sum = nums[low] + nums[high];
+            if (sum < target) {
+                low++;
+            } else if (sum > target) {
+                high--;
+            } else {
+                break;
+            }
+        }
+        if (low < high) {
+            // 现在得到了排序之后的下标，需要返回的是排序之前的下标
+            // 因为数组中存在相同值的数字，再获取原来的下标就很麻烦，增加复杂度
+            // 如果需要得到的是两个数字，这样就可以了
+            return new int[]{low, high};
+        } else {
+            return null;
+        }
+    }
+    
 	/**
 	 * 测试入口
 	 * 
@@ -94,7 +143,7 @@ class Solution {
 	 */
 	public static void testDoor() {
 		Solution solution = new Solution();
-		int[] ints = solution.twoSum2(new int[] { 2, 5, 5, 15 }, 10);
+		int[] ints = solution.twoSum3(new int[] { 2, 5, 5, 15 }, 10);
 		System.out.println(JSON.toJSON(ints));
 
 	}
