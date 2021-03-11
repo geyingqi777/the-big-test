@@ -7,6 +7,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * N皇后
+ *
+ * @author geyingqi
+ * @see https://leetcode-cn.com/problems/n-queens/
+ */
 class Solution {
     private List<List<String>> result = new ArrayList<>();
     private String[][] trackedPosition;

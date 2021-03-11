@@ -5,6 +5,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * 全排列
+ *
+ * @author geyingqi
+ * @see https://leetcode-cn.com/problems/permutations/
+ */
 class Solution {
     private LinkedList<Integer> tracked = new LinkedList<>();
     private List<List<Integer>> result = new LinkedList<>();
