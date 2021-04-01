@@ -43,4 +43,35 @@ class Solution {
         }
         return slow;
     }
+
+    /**
+     * 另外一种实现
+     *
+     * @param head
+     * @return
+     */
+    private static ListNode reverse(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode current = head;
+        ListNode nextNode;
+        ListNode previous = head;
+        
+        while (current != null) {
+            // 下一个节点
+            nextNode = current.next;
+            if (current != head) {
+                // 下一个节点的指针指向前一个对象
+                current.next = previous;
+            }
+            // 前一个节点
+            previous = current;
+            // 当前节点
+            current = nextNode;
+        }
+        // 最后一个节点
+        return previous;
+    }
 }
